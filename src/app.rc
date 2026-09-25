@@ -1,0 +1,1469 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""app.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Файл"
+    BEGIN
+        MENUITEM "&Вход...\tCtrl+L",            ID_TOOLS_LOGIN
+        MENUITEM SEPARATOR
+        MENUITEM "В&ыход",                      ID_APP_EXIT
+    END
+    POPUP "&Вид"
+    BEGIN
+        MENUITEM "Панели &инструментов",        ID_VIEW_TOOLBAR
+        MENUITEM "Строка &состояния",           ID_VIEW_STATUS_BAR
+        MENUITEM "Панель &процессов",           ID_VIEW_PROCESS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Очередь\tCtrl+Q",            ID_VIEW_QUEUE
+        MENUITEM "&Архив\tCtrl+H",              ID_VIEW_HISTORY
+        MENUITEM SEPARATOR
+        MENUITEM "&Критерия...\tCtrl+T",        ID_VIEW_TERM
+        MENUITEM SEPARATOR
+        MENUITEM "О&бновить\tF5",               ID_VIEW_RELOAD
+    END
+    POPUP "&Задача"
+    BEGIN
+        MENUITEM "&Создать...\tInsert",         ID_FILE_ADD
+        MENUITEM "&Изменить...\tEnter",         ID_FILE_EDIT
+        MENUITEM "&Удалить\tDelete",            ID_FILE_DELETE
+        MENUITEM SEPARATOR
+        POPUP "&Приоритет"
+        BEGIN
+            MENUITEM "&Первый\tCtrl+Up",            ID_PRIOR_TOP
+            MENUITEM "&Вверх\tShift+Up",            ID_PRIOR_UP
+            MENUITEM "В&низ\tShift+Down",           ID_PRIOR_DOWN
+            MENUITEM "П&оследний\tCtrl+Down",       ID_PRIOR_BOTTOM
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "С&тарт\tCtrl+S",              ID_FILE_START
+        MENUITEM "Ст&оп\tCtrl+Shift+S",         ID_FILE_STOP
+        MENUITEM "&Архивировать\tCtrl+Delete",  ID_FILE_HISTORY
+        MENUITEM "&Пометить\tCtrl+Enter",       ID_FILE_SUBMIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Информация...\tAlt+Enter",   ID_FILE_INFO
+    END
+    POPUP "&Сервис"
+    BEGIN
+        MENUITEM "&Изменить пароль...",         ID_TOOLS_PASS
+        MENUITEM "&Пользователи...",            ID_TOOLS_USERS
+        MENUITEM SEPARATOR
+        MENUITEM "&Настройка...",               ID_TOOLS_OPTIONS
+    END
+    POPUP "С&правка"
+    BEGIN
+        MENUITEM "&О программе",                ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LOGIN DIALOGEX 0, 0, 160, 108
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Вход"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Логин",IDC_STATIC,20,22,21,8
+    EDITTEXT        IDC_EB_LOGIN,45,20,100,12,ES_AUTOHSCROLL
+    LTEXT           "&Пароль",IDC_STATIC,15,49,26,8
+    EDITTEXT        IDC_EB_PASS,45,47,100,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,74,146,1
+    DEFPUSHBUTTON   "OK",IDOK,40,84,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,95,84,50,14
+END
+
+IDD_TASK DIALOGEX 0, 0, 338, 321
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Создать заказ"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Заказчик",IDC_STATIC,36,16,32,8
+    COMBOBOX        IDC_CB_COMPANY,72,14,112,177,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Название заказа",IDC_STATIC,10,33,58,8
+    COMBOBOX        IDC_CB_TASK,72,31,112,194,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "&Воостановить из архив",IDC_BTN_HISTORY,94,47,90,14
+    LTEXT           "&Код заказа",IDC_STATIC,199,16,39,8
+    EDITTEXT        IDC_EB_CODE,242,14,80,12,ES_AUTOHSCROLL
+    LTEXT           "&Дата сдачи",IDC_STATIC,198,33,40,8
+    CONTROL         "",IDC_DT_REFER_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | 
+                    WS_TABSTOP,242,31,80,12
+    LTEXT           "&Тираж",IDC_STATIC,216,50,22,8
+    EDITTEXT        IDC_EB_EDITION,242,48,80,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Дополнител&ьно",IDC_STATIC,14,71,54,8
+    EDITTEXT        IDC_EB_NOTE,72,69,250,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ду&блировать",IDC_BTN_DUP_JOB,171,119,56,14
+    PUSHBUTTON      "&Удалить эту задача",IDC_BTN_DEL_JOB,231,119,80,14
+    LTEXT           "&Размер заказа",IDC_STATIC,24,147,49,8
+    EDITTEXT        IDC_EB_SIZE,77,145,80,12,ES_AUTOHSCROLL
+    LTEXT           "&Формат бумаги",IDC_STATIC,21,163,52,8
+    EDITTEXT        IDC_EB_PAPER_FMT,77,161,80,12,ES_AUTOHSCROLL
+    LTEXT           "&Количество",IDC_STATIC,32,178,41,8
+    EDITTEXT        IDC_EB_PAPER_NUM,77,176,80,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Формат &печати",IDC_STATIC,175,147,52,8
+    EDITTEXT        IDC_EB_PRINT_FMT,231,145,80,12,ES_AUTOHSCROLL
+    LTEXT           "&Цветность",IDC_STATIC,189,163,38,8
+    EDITTEXT        IDC_EB_COLOR,231,161,80,12,ES_AUTOHSCROLL
+    LTEXT           "Кол. п&ластин",IDC_STATIC,181,178,46,8
+    EDITTEXT        IDC_EB_PALST_NUM,231,176,80,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Проц&ессы",IDC_STATIC,39,202,34,8
+    LISTBOX         IDC_LB_VALUES,77,202,173,74,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Д&обавить",IDC_BTN_ADD,261,204,50,14
+    PUSHBUTTON      "Уд&алить",IDC_BTN_DEL,261,221,50,14
+    PUSHBUTTON      "Ввер&х",IDC_BTN_UP,261,241,50,14
+    PUSHBUTTON      "Вн&из",IDC_BTN_DOWN,261,258,50,14
+    CONTROL         "",IDC_TAB_JOBS,"SysTabControl32",TCS_RAGGEDRIGHT | 
+                    WS_TABSTOP,8,97,322,192
+    DEFPUSHBUTTON   "OK",IDOK,218,297,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,272,297,50,14
+END
+
+IDD_INFO DIALOGEX 0, 0, 185, 155
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Информация"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Отмена",IDCANCEL,123,131,50,14
+    LTEXT           "&Контактная информация",IDC_STATIC,10,16,85,8
+    EDITTEXT        IDC_EB_CONTACT,8,28,168,91,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    PUSHBUTTON      "OK",IDOK,69,131,50,14
+END
+
+IDD_JOB DIALOGEX 0, 0, 234, 166
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Процессы"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Цех",IDC_STATIC,15,10,14,8
+    LISTBOX         IDC_LB_WORK,13,21,96,98,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Работа",IDC_STATIC,126,10,25,8
+    LISTBOX         IDC_LB_VALUE,124,21,96,98,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,132,220,1
+    DEFPUSHBUTTON   "&Добавить",IDOK,115,140,50,14
+    PUSHBUTTON      "&Закрыть",IDCANCEL,170,140,50,14
+END
+
+IDD_USERS DIALOGEX 0, 0, 424, 241
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Пользователи"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LC_USERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,7,7,346,227
+    PUSHBUTTON      "&Добавить",IDC_BTN_ADD,363,23,50,14
+    PUSHBUTTON      "&Изменить",IDC_BTN_EDIT,363,41,50,14
+    PUSHBUTTON      "&Удалить",IDC_BTN_DEL,363,59,50,14
+    PUSHBUTTON      "&Закрыть",IDCANCEL,363,111,50,14
+END
+
+IDD_USER DIALOGEX 0, 0, 208, 222
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Пользователь"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Логин",IDC_STATIC,44,17,21,8
+    EDITTEXT        IDC_EB_LOGIN,70,15,120,12,ES_AUTOHSCROLL
+    LTEXT           "&Пароль",IDC_STATIC,39,44,26,8
+    EDITTEXT        IDC_EB_PASS,70,42,120,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "По&дтв. пароль",IDC_STATIC,14,60,51,8
+    EDITTEXT        IDC_EB_PASS_RE,69,58,120,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Фамилия",IDC_STATIC,35,87,30,8
+    EDITTEXT        IDC_EB_LNAME,70,85,120,12,ES_AUTOHSCROLL
+    LTEXT           "&Имя",IDC_STATIC,51,103,14,8
+    EDITTEXT        IDC_EB_FNAME,70,101,120,12,ES_AUTOHSCROLL
+    LTEXT           "&Отчество",IDC_STATIC,31,119,34,8
+    EDITTEXT        IDC_EB_MNAME,70,117,120,12,ES_AUTOHSCROLL
+    LTEXT           "&АРМ",IDC_STATIC,50,147,15,8
+    COMBOBOX        IDC_CB_ROLE,70,145,120,99,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Цех",IDC_STATIC,51,163,14,8
+    COMBOBOX        IDC_CB_WORK,70,161,120,79,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,191,194,20
+    DEFPUSHBUTTON   "OK",IDOK,91,199,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,146,199,50,14
+END
+
+IDD_PASS DIALOGEX 0, 0, 176, 105
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Изменить пароль"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Старый пароль",IDC_STATIC,17,17,53,8
+    EDITTEXT        IDC_EB_PASS_OLD,75,14,82,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Новый пароль",IDC_STATIC,21,33,49,8
+    EDITTEXT        IDC_EB_PASS,75,31,82,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Подтв. пароль",IDC_STATIC,19,50,51,8
+    EDITTEXT        IDC_EB_PASS_RE,75,48,82,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,75,162,1
+    DEFPUSHBUTTON   "OK",IDOK,61,82,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,115,82,50,14
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 173, 132
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Настройка"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Название сервера",IDC_STATIC,21,15,62,8
+    EDITTEXT        IDC_EB_SERVER,20,26,134,12,ES_AUTOHSCROLL
+    CONTROL         "&Подклучить авто обновление",IDC_CH_AUTO_RELOAD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,55,117,10
+    LTEXT           "Интервал обновление",IDC_STATIC,21,74,76,8
+    EDITTEXT        IDC_EB_RELOAD_SPACE,101,72,24,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "минут",IDC_STATIC,130,74,21,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,100,159,1
+    DEFPUSHBUTTON   "OK",IDOK,54,108,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,109,108,50,14
+END
+
+IDD_TERM DIALOGEX 0, 0, 457, 300
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Критерия"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Название поле",IDC_STATIC,31,15,51,8
+    LTEXT           "Оператор",IDC_STATIC,95,15,34,8
+    LTEXT           "Значение",IDC_STATIC,149,15,33,8
+    LTEXT           "Оператор",IDC_STATIC,220,15,34,8
+    LTEXT           "Значение",IDC_STATIC,273,15,33,8
+    LTEXT           "Порядок",IDC_STATIC,357,15,30,8
+    LTEXT           "Обратно",IDC_STATIC,406,15,30,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,29,443,1
+    RTEXT           "Static",IDS_COL_CODE,22,46,60,8
+    COMBOBOX        IDC_CB_COL_CODE,90,44,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_CODE,140,44,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_JOB,22,62,60,8
+    COMBOBOX        IDC_CB_COL_JOB_FROM,90,60,44,138,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_JOB_FROM,140,60,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "и",IDC_STATIC,202,62,8,8
+    COMBOBOX        IDC_CB_COL_JOB_TO,215,60,44,136,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_JOB_TO,264,60,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Static",IDS_COL_REFER_DATE,22,78,60,8
+    COMBOBOX        IDC_CB_COL_REFER_DATE_FROM,90,76,44,107,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_DT_COL_REFER_DATE_FORM,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,140,76,53,12
+    LTEXT           "и",IDC_STATIC,202,78,8,8
+    COMBOBOX        IDC_CB_COL_REFER_DATE_TO,215,76,44,154,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_DT_COL_REFER_DATE_TO,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,264,76,53,12
+    RTEXT           "Static",IDS_COL_COMPANY,22,94,60,8
+    COMBOBOX        IDC_CB_COL_COMPANY,90,92,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_COMPANY,140,92,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_TASK,22,110,60,8
+    COMBOBOX        IDC_CB_COL_TASK,90,108,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_TASK,140,108,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_EDITION,22,126,60,8
+    COMBOBOX        IDC_CB_COL_EDITION_FROM,90,124,44,138,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_EDITION_FROM,140,124,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "и",IDC_STATIC,202,126,8,8
+    COMBOBOX        IDC_CB_COL_EDITION_TO,215,124,44,136,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_EDITION_TO,264,124,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Static",IDS_COL_SIZE,22,142,60,8
+    COMBOBOX        IDC_CB_COL_SIZE,90,140,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_SIZE,140,140,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_PAPER_FMT,22,158,60,8
+    COMBOBOX        IDC_CB_COL_PAPER_FMT,90,156,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_PAPER_FMT,140,156,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_PAPER_NUM,22,174,60,8
+    COMBOBOX        IDC_CB_COL_PAPER_NUM_FROM,90,172,44,138,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_PAPER_NUM_FROM,140,172,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "и",IDC_STATIC,202,174,8,8
+    COMBOBOX        IDC_CB_COL_PAPER_NUM_TO,215,172,44,136,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_PAPER_NUM_TO,264,172,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Static",IDS_COL_PRINT_FMT,22,190,60,8
+    COMBOBOX        IDC_CB_COL_PRINT_FMT,90,188,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_PRINT_FMT,140,188,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_COLOR,22,206,60,8
+    COMBOBOX        IDC_CB_COL_COLOR,90,204,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_COLOR,140,204,53,12,ES_AUTOHSCROLL
+    RTEXT           "Static",IDS_COL_PLAST_NUM,22,222,60,8
+    COMBOBOX        IDC_CB_COL_PLAST_NUM_FROM,90,220,44,138,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_PLAST_NUM_FROM,140,220,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "и",IDC_STATIC,202,222,8,8
+    COMBOBOX        IDC_CB_COL_PLAST_NUM_TO,215,220,44,136,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_PLAST_NUM_TO,264,220,53,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Static",IDS_COL_NOTE,22,238,60,8
+    COMBOBOX        IDC_CB_COL_NOTE,90,236,44,117,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EB_COL_NOTE,140,236,53,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,337,32,1,231
+    COMBOBOX        IDC_CB_COL_CODE_O,355,44,33,214,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_CODE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    413,46,16,8
+    COMBOBOX        IDC_CB_COL_JOB_O,355,60,33,236,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_JOB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    413,62,16,8
+    COMBOBOX        IDC_CB_COL_REFER_DATE_O,355,76,33,213,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_REFER_DATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,78,16,8
+    COMBOBOX        IDC_CB_COL_COMPANY_O,355,92,33,216,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_COMPANY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,94,16,8
+    COMBOBOX        IDC_CB_COL_TASK_O,355,108,33,242,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_TASK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    413,110,16,8
+    COMBOBOX        IDC_CB_COL_EDITION_O,355,124,33,342,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_EDITION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,126,16,8
+    COMBOBOX        IDC_CB_COL_SIZE_O,355,140,33,252,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_SIZE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    413,142,16,8
+    COMBOBOX        IDC_CB_COL_PAPER_FMT_O,355,156,33,271,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_PAPER_FMT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,158,16,8
+    COMBOBOX        IDC_CB_COL_PAPER_NUM_O,355,172,33,271,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_PAPER_NUM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,174,16,8
+    COMBOBOX        IDC_CB_COL_PRINT_FMT_O,355,188,33,263,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_PRINT_FMT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,190,16,8
+    COMBOBOX        IDC_CB_COL_COLOR_O,355,204,33,259,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_COLOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,206,16,8
+    COMBOBOX        IDC_CB_COL_PLAST_NUM_O,355,220,33,271,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_PLAST_NUM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,413,222,16,8
+    COMBOBOX        IDC_CB_COL_NOTE_O,355,236,33,256,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CH_COL_NOTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    413,238,16,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,264,443,1
+    DEFPUSHBUTTON   "OK",IDOK,176,273,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,231,273,50,14
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 239, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "О программе"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",-1,"Static",SS_OWNERDRAW,12,14,51,47
+    LTEXT           "Printing House 1.0",-1,80,16,60,8,SS_NOPREFIX
+    LTEXT           "Программист: Ахметоллаулы Толкын",-1,80,34,126,8
+    LTEXT           "© 2009. Все права защещены.",-1,80,48,105,8
+    LTEXT           "Э-почта:",-1,80,71,31,8
+    CONTROL         "tolken.sak@gmail.com\nmailto:tolken.sak@gmail.com",-1,
+                    "TolLinkCtrl",WS_TABSTOP,115,71,95,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_LOGIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_TASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 331
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 314
+    END
+
+    IDD_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_JOB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+
+    IDD_USERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 417
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_USER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+    END
+
+    IDD_PASS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 166
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_TERM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 450
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 293
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TERM DLGINIT
+BEGIN
+    IDC_CB_COL_CODE, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_CODE, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_CODE, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_CODE, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_JOB_FROM, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_JOB_FROM, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_JOB_FROM, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_JOB_FROM, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_JOB_FROM, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_JOB_FROM, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_JOB_FROM, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_JOB_TO, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_JOB_TO, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_JOB_TO, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_JOB_TO, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_JOB_TO, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_JOB_TO, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_JOB_TO, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_REFER_DATE_FROM, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_REFER_DATE_TO, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_COMPANY, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_COMPANY, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_COMPANY, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_COMPANY, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_TASK, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_TASK, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_TASK, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_TASK, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_EDITION_FROM, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_EDITION_FROM, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_EDITION_FROM, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_EDITION_FROM, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_EDITION_FROM, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_EDITION_FROM, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_EDITION_FROM, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_EDITION_TO, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_EDITION_TO, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_EDITION_TO, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_EDITION_TO, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_EDITION_TO, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_EDITION_TO, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_EDITION_TO, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_SIZE, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_SIZE, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_SIZE, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_SIZE, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_PAPER_FMT, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PAPER_FMT, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_PAPER_FMT, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_PAPER_FMT, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_PAPER_NUM_FROM, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_PAPER_NUM_TO, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_PRINT_FMT, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PRINT_FMT, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_PRINT_FMT, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_PRINT_FMT, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_COLOR, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_COLOR, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_COLOR, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_COLOR, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_PLAST_NUM_FROM, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 2, 0
+0x003e, 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 3, 0
+0x3d3e, "\000" 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 2, 0
+0x003c, 
+    IDC_CB_COL_PLAST_NUM_TO, 0x403, 3, 0
+0x3d3c, "\000" 
+    IDC_CB_COL_NOTE, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_NOTE, 0x403, 2, 0
+0x003d, 
+    IDC_CB_COL_NOTE, 0x403, 3, 0
+0x3d21, "\000" 
+    IDC_CB_COL_NOTE, 0x403, 5, 0
+0x696c, 0x656b, "\000" 
+    IDC_CB_COL_CODE_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_CODE_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_CODE_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_CODE_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_CODE_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_CODE_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_JOB_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_JOB_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_JOB_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_JOB_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_JOB_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_JOB_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_REFER_DATE_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_COMPANY_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_COMPANY_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_COMPANY_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_COMPANY_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_COMPANY_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_COMPANY_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_TASK_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_TASK_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_TASK_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_TASK_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_TASK_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_TASK_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_EDITION_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_EDITION_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_EDITION_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_EDITION_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_EDITION_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_EDITION_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_SIZE_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_SIZE_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_SIZE_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_SIZE_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_SIZE_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_SIZE_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_PAPER_FMT_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_PAPER_NUM_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_PRINT_FMT_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_COLOR_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_COLOR_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_COLOR_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_COLOR_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_COLOR_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_COLOR_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_PLAST_NUM_O, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_CB_COL_NOTE_O, 0x403, 1, 0
+"\000" 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0031, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0032, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0033, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0034, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0035, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0036, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0037, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0038, 
+    IDC_CB_COL_NOTE_O, 0x403, 2, 0
+0x0039, 
+    IDC_CB_COL_NOTE_O, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_CB_COL_NOTE_O, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_CB_COL_NOTE_O, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_CB_COL_NOTE_O, 0x403, 3, 0
+0x3331, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDC_EB_LOGIN            "Логин не выдан.     "
+    IDC_EB_CODE             "Код не выдан.     "
+    IDS_EMPTY_TEXT_PROCESS  "Выберите задача слева."
+    IDS_EMPTY_TEXT_WORK     "----------------  Данны нет  ----------------"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_EB_FNAME            "ФИО не выдан.     "
+    IDC_EB_MNAME            "ФИО не выдан.     "
+    IDC_EB_LNAME            "ФИО не выдан.     "
+    IDC_EB_SERVER           "Сервер не выдан.     "
+    IDC_EB_PASS             "Пароль не выдан.     "
+    IDC_EB_PASS_RE          "Павтор пароль не правильно.     "
+    IDC_DT_REFER_DATE       "Дата здачи не выдан.     "
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_CB_COMPANY          "Заказчик не выдан.     "
+    IDC_CB_TASK             "Название заказа не выдан.     "
+    IDC_CB_ROLE             "Выберите АРМ.      "
+    IDC_CB_WORK             "Выберите дольжность.      "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_QST_DELETE_USER     "Удалить ""%s"" ?     "
+    IDS_QST_DELETE          "Удалить ?     "
+    IDS_QST_START           "Старт ?     "
+    IDS_QST_STOP            "Стоп ?     "
+    IDS_QST_HISTORY         "Архивировать ?     "
+    IDS_QST_SUBMIT          "Пометить ?     "
+    IDS_QST_JOB_DATA_NOT_ENOUGH 
+                            "У задача %d данны не достаточно.     \nПродолжить ?     "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INF_PASS_CHANGE_FAILED "Старая пароль не верно.     "
+    IDS_INF_PASS_CHANGE_SUCCESS "Пароль успешно изменено.     "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WRN_LOGIN_FAILED    "Логин или пароль не верно.     "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_STATE           "Статус"
+    IDS_COL_CODE            "Код"
+    IDS_COL_JOB             "Задача"
+    IDS_COL_REFER_DATE      "Дата сдачи"
+    IDS_COL_COMPANY         "Заказчик"
+    IDS_COL_TASK            "Название заказа"
+    IDS_COL_EDITION         "Тираж"
+    IDS_COL_SIZE            "Размер заказа"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_PAPER_FMT       "Формат бумаги"
+    IDS_COL_PAPER_NUM       "Кол-во"
+    IDS_COL_PRINT_FMT       "Формат печати"
+    IDS_COL_COLOR           "Цветность"
+    IDS_COL_PLAST_NUM       "Кол. пластин"
+    IDS_COL_NOTE            "Дополнительно"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Printing House"
+    AFX_IDS_IDLEMESSAGE     "Готово"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_CAPS       "БАЛ"
+    ID_INDICATOR_NUM        "НУМ"
+    ID_INDICATOR_SCRL       "СКРЛ"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Отображать информация о программе\nО  программе"
+    ID_APP_EXIT             "Выход из прграмма\nВыход"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Показать или скрыть панели инструментов\nПанели инструментов"
+    ID_VIEW_STATUS_BAR      "Показать или скрыть строка состаяния\nСтрока состаяния"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_TOOLS_LOGIN          "Вход\nВход (Ctrl+L)"
+    ID_TOOLS_USERS          "Пользователи\nПользователи"
+    ID_TOOLS_PASS           "Изменить пароль"
+    ID_TOOLS_OPTIONS        "Настройка программа\nНастройка"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_ADD             "Создать новый заказ\nСоздать (Insert)"
+    ID_FILE_EDIT            "Изменить\nИзменить (Enter)"
+    ID_FILE_DELETE          "Удалить\nУдалить (Delete)"
+    ID_FILE_START           "Старт\nСтарт (Ctrl+S)"
+    ID_FILE_STOP            "Стоп\nСтоп (Ctrl+Shift+S)"
+    ID_FILE_HISTORY         "Архивировать\nАрхивировать (Ctrl+Delete)"
+    ID_FILE_SUBMIT          "Пометить как исполненное\nПометить (Ctrl+Enter)"
+    ID_FILE_INFO            "Информация\nИнформация (Alt+Enter)"
+    ID_VIEW_PROCESS_BAR     "Процессы\nПроцессы"
+    ID_VIEW_RELOAD          "Обновить\nОбновить (F5)"
+    ID_VIEW_QUEUE           "Очередь\nОчередь (Ctrl+Q)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_LOGIN           "Логин"
+    IDS_COL_FULLNAME        "ФИО"
+    IDS_COL_ROLE            "АРМ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_WORK            "Цех"
+END
+
+STRINGTABLE 
+BEGIN
+    IDD_TASK                "Изменить заказ"
+    IDD_INFO                "Информация %s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TAB_JOB             "Задача %d"
+    IDS_TAB_ADD             "Добавить"
+    IDS_PROCESS_BAR_TITLE   "Процессы"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_HISTORY         "Архив\nАрхив (Ctrl+H)"
+    ID_VIEW_TERM            "Критерия\nКритерия (Ctrl+T)"
+    ID_PRIOR_TOP            "Проритет: первый\nПервый (Ctrl+Up)"
+    ID_PRIOR_UP             "Проритет: вверх\nВверх (Shift+Up)"
+    ID_PRIOR_DOWN           "Проритет: вниз\nВниз (Shift+Down)"
+    ID_PRIOR_BOTTOM         "Проритет: последний\nПоследний (Ctrl+Down)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Printing House\n\\Printing House\n\n\n\n"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_LC_PROCESS          "Отабражает процессы для выбраннай задача из списк"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TIT_INFO            "Сообщения"
+    IDS_TIT_WARN            "Предупреждение"
+    IDS_TIT_CONF            "Подтверждение"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_SHOP            "Цех"
+    IDS_COL_VALUE           "Работа"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    VK_INSERT,      ID_FILE_ADD,            VIRTKEY, NOINVERT
+    VK_DELETE,      ID_FILE_DELETE,         VIRTKEY, NOINVERT
+    VK_RETURN,      ID_FILE_EDIT,           VIRTKEY, NOINVERT
+    VK_DELETE,      ID_FILE_HISTORY,        VIRTKEY, CONTROL, NOINVERT
+    VK_RETURN,      ID_FILE_INFO,           VIRTKEY, ALT, NOINVERT
+    "S",            ID_FILE_START,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_STOP,           VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    VK_RETURN,      ID_FILE_SUBMIT,         VIRTKEY, CONTROL, NOINVERT
+    VK_DOWN,        ID_PRIOR_BOTTOM,        VIRTKEY, CONTROL, NOINVERT
+    VK_DOWN,        ID_PRIOR_DOWN,          VIRTKEY, SHIFT, NOINVERT
+    VK_UP,          ID_PRIOR_TOP,           VIRTKEY, CONTROL, NOINVERT
+    VK_UP,          ID_PRIOR_UP,            VIRTKEY, SHIFT, NOINVERT
+    "L",            ID_TOOLS_LOGIN,         VIRTKEY, CONTROL, NOINVERT
+    "H",            ID_VIEW_HISTORY,        VIRTKEY, CONTROL, NOINVERT
+    "Q",            ID_VIEW_QUEUE,          VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          ID_VIEW_RELOAD,         VIRTKEY, NOINVERT
+    "T",            ID_VIEW_TERM,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Tolken"
+            VALUE "FileDescription", "Printing House Application"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "printhouse.exe"
+            VALUE "LegalCopyright", "© 2009. Tolken Ahmetolla."
+            VALUE "OriginalFilename", "printhouse.exe"
+            VALUE "ProductName", "Printing House"
+            VALUE "ProductVersion", "1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\app.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TOOLBAR             BITMAP                  "res\\toolbar.bmp"
+IDB_STATE               BITMAP                  "res\\state.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "app.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
