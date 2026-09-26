@@ -1,13 +1,10 @@
 # <img src="appicon.png" alt="PrintHouse" width="26"> PrintHouse
 
-Designed for work in a printing shop.
-It manages printing jobs and their queues.
+Designed for work in a printing shop. It manages printing jobs and their queues.
 
-created in 2008-2009
+Developed in 2008-2009 using C++, MFC and MySQL.
 
-Teck stack: C++, MFC, MySQL
-
-**Screenshot**
+**Screenshots**
 
 ![Screenshot: Orders Line](screenshots/orders-line.png "Orders Line")
 ![Screenshot: Login](screenshots/login.png "Login")
