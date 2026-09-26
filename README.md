@@ -1,6 +1,7 @@
 # <img src="appicon.png" alt="PrintHouse" width="26"> PrintHouse
 
-An application for printing houses.
+Designed for work in a printing shop.
+It manages printing jobs and their queues.
 
 created in 2008-2009
 
