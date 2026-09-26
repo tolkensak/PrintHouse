@@ -1,4 +1,4 @@
-# <img src="appicon.png" alt="PrintHouse" width="26"> PrintHouse
+# <img src="icon.png" alt="PrintHouse" width="26"> PrintHouse
 
 Designed for work in a printing shop. It manages printing jobs and their queues.
 
